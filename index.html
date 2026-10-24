@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SevaConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="login" class="login">
+    <form id="loginForm" class="card">
+      <h1>✦ SevaConnect</h1>
+      <p>Make your community better.</p>
+      <label>Email</label>
+      <input id="email" type="email" required placeholder="Email address">
+      <label>Password</label>
+      <input type="password" required placeholder="Password">
+      <button>Login</button>
+      <small>Demo login: any valid email and password.</small>
+    </form>
+  </section>
+
+  <main id="app" class="hidden">
+    <header>
+      <h2>✦ SevaConnect</h2>
+      <button id="theme" type="button">🌙 Theme</button>
+      <button id="logout" type="button">Logout</button>
+    </header>
+
+    <nav>
+      <button data-page="home">Dashboard</button>
+      <button data-page="submit">Submit</button>
+      <button data-page="track">Track</button>
+      <button data-page="mine">My Complaints</button>
+      <button data-page="community">Community</button>
+      <button data-page="feedback">Feedback</button>
+      <button data-page="profile">Profile</button>
+    </nav>
+
+    <section id="home" class="page">
+      <h1>Hello, <span id="welcome">Citizen</span>!</h1>
+      <p>Report local issues and follow their progress.</p>
+      <div class="grid">
+        <article class="card">Total Complaints<h2 id="total">0</h2></article>
+        <article class="card">Open Complaints<h2 id="open">0</h2></article>
+        <article class="card">Resolved<h2 id="resolved">0</h2></article>
+      </div>
+      <h2>Quick Actions</h2>
+      <p>Use the navigation above to manage complaints.</p>
+    </section>
+
+    <section id="submit" class="page hidden">
+      <h1>Submit a Complaint</h1>
+      <form id="complaintForm" class="card">
+        <label>Category</label>
+        <select id="category" required>
+          <option value="">Choose category</option>
+          <option>Roads and Potholes</option>
+          <option>Streetlights</option>
+          <option>Water Supply</option>
+          <option>Garbage and Waste</option>
+          <option>Drainage</option>
+          <option>Other</option>
+        </select>
+        <label>Location</label>
+        <input id="location" required placeholder="Issue location">
+        <label>Description</label>
+        <textarea id="description" required placeholder="Describe the issue"></textarea>
+        <label>Attach image (optional)</label>
+        <input id="image" type="file" accept="image/*">
+        <button>Submit Complaint</button>
+        <p id="message"></p>
+      </form>
+    </section>
+
+    <section id="track" class="page hidden">
+      <h1>Track a Complaint</h1>
+      <form id="trackForm" class="card">
+        <label>Complaint ID</label>
+        <input id="trackId" required placeholder="Example: SC1024">
+        <button>Track</button>
+      </form>
+      <div id="trackResult" class="card hidden"></div>
+    </section>
+
+    <section id="mine" class="page hidden">
+      <h1>My Complaints</h1>
+      <input id="search" placeholder="Search complaints">
+      <select id="filter">
+        <option value="All">All statuses</option>
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Resolved</option>
+      </select>
+      <div id="myList"></div>
+    </section>
+
+    <section id="community" class="page hidden">
+      <h1>Community Insights</h1>
+      <p>Sample civic issues reported by the community.</p>
+      <div class="grid">
+        <article class="card">Roads and Potholes<h2>32%</h2></article>
+        <article class="card">Water Supply<h2>25%</h2></article>
+        <article class="card">Streetlights<h2>18%</h2></article>
+      </div>
+      <input id="publicSearch" placeholder="Search community complaints">
+      <select id="publicFilter">
+        <option value="All">All categories</option>
+        <option>Roads and Potholes</option>
+        <option>Streetlights</option>
+        <option>Water Supply</option>
+        <option>Garbage and Waste</option>
+        <option>Drainage</option>
+        <option>Other</option>
+      </select>
+      <div id="publicList"></div>
+    </section>
+
+    <!-- Feedback Submission Page -->
+    <section id="feedback" class="page hidden">
+      <h1>Submit Feedback</h1>
+      <p>Share your experience and help us improve SevaConnect.</p>
+
+      <form id="feedbackForm" class="card">
+        <label>Feedback Category</label>
+        <select id="feedbackCategory" required>
+          <option value="">Choose category</option>
+          <option>Website Experience</option>
+          <option>Complaint Submission</option>
+          <option>Complaint Tracking</option>
+          <option>Suggestions</option>
+          <option>Other</option>
+        </select>
+
+        <label>Rating</label>
+        <select id="feedbackRating" required>
+          <option value="">Choose rating</option>
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Good</option>
+          <option value="3">3 - Average</option>
+          <option value="2">2 - Poor</option>
+          <option value="1">1 - Very Poor</option>
+        </select>
+
+        <label>Your Feedback</label>
+        <textarea id="feedbackText" required
+          placeholder="Write your feedback or suggestions"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+        <p id="feedbackMessage" role="status"></p>
+      </form>
+    </section>
+
+    <section id="profile" class="page hidden">
+      <h1>My Profile</h1>
+      <form id="profileForm" class="card">
+        <label>Name</label>
+        <input id="name" required value="Citizen">
+        <label>Email</label>
+        <input id="profileEmail" type="email" required>
+        <label>City</label>
+        <input id="city" required value="Mumbai, Maharashtra">
+        <button>Save Profile</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

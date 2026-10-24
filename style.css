@@ -1,0 +1,162 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Arial, sans-serif;
+  color: #20304a;
+  background: #f3f6fc;
+}
+
+body {
+  min-height: 100vh;
+  background: #f3f6fc;
+  color: #20304a;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+}
+
+button {
+  background: #246bfd;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  margin: 5px 4px 5px 0;
+}
+
+input, select, textarea {
+  width: 100%;
+  margin: 5px 0 14px;
+  background: white;
+  color: #20304a;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+textarea {
+  min-height: 85px;
+}
+
+header, nav {
+  padding: 16px 5%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header {
+  justify-content: space-between;
+  background: white;
+}
+
+nav {
+  background: #e5edff;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.page {
+  padding: 28px 5%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  color: #20304a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 14px #0001;
+  margin: 12px 0;
+}
+
+.login .card {
+  width: min(100%, 400px);
+}
+
+h1, h2, p {
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.item {
+  background: white;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border-left: 5px solid #246bfd;
+  color: #20304a;
+}
+
+.status {
+  font-weight: bold;
+  color: #246bfd;
+}
+
+small {
+  display: block;
+  margin-top: 12px;
+  color: #65748b;
+}
+
+body.dark {
+  background: #172033;
+  color: #f4f6fa;
+}
+
+body.dark header,
+body.dark nav,
+body.dark .card,
+body.dark .item {
+  background: #24314a;
+  color: #f4f6fa;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: #172033;
+  color: white;
+  border-color: #53617a;
+}
+
+@media (max-width: 600px) {
+  header {
+    align-items: flex-start;
+  }
+
+  nav button {
+    flex: 1;
+  }
+}
